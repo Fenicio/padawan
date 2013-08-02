@@ -1,0 +1,26 @@
+<template name="answerEdit">
+	<form name="answer" class="answer-form">
+		<div class="control-group">
+			<label for="body">Answer body</label>
+			<div class="controls" id="editor">
+				<textarea id="text-body" name="body">{{body}}</textarea>
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<div class="canvas-wrap">
+					<canvas id="a-canvas">
+					</canvas>
+				</div>
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<button id="wipe-answer" class="btn">Wipe</button>
+				<button id="reset-canvas" class="btn">Reset canvas</button>
+				<button id="load-question" class="btn">Load question canvas</button>
+				<button type="submit" class="btn">Update answer</button>
+			</div>
+		</div>
+	</form>
+</template>

@@ -1,0 +1,8 @@
+.canvas-wrap {
+	border: 3px solid;
+	border-color: "#999999";
+	min-height: 9cm;
+	min-width: 15cm;
+	height: 100%;
+	width: 100%;
+}

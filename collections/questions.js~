@@ -1,0 +1,11 @@
+Questions = new Meteor.Collection('questions');
+
+Meteor.Methods({});
+
+Questions.allow({
+  insert: function(userId, doc) {
+    return !! userId;
+  },
+  update: ownsDocument,
+  remove: ownsDocument
+});

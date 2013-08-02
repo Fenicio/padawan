@@ -1,0 +1,35 @@
+<template name="questionPage">
+	{{#with currentQuestion}}
+		<div class="title">{{title}}</div>
+		<div class="q-body">{{body}}</div>
+		<div class="q-footnote">
+			Asked by {{author}} on {{dateFormat submitted format="DD/MM/YYYY"}}
+			{{#if ownQuestion}}<a href="{{questionEditPath this}}">Edit</a>{{/if}}
+		</div>
+		<img src="{{picture}}">
+		<ul class="answers">
+			{{#each answers}}
+				{{> answer}}
+			{{/each}}
+		</ul>
+		{{#if currentUser}}
+			{{> answerSubmit}}
+		{{else}}
+			<p>Please log in to answer.</p>
+		{{/if}}
+		<div class="commentsWrap">
+			<ul class="comments">
+			{{#each comments}}
+				{{> comment}}
+			{{/each}}
+			</ul>
+			<div class="insertComment">
+				{{#if currentUser}}
+					{{> commentSubmit}}
+				{{else}}
+					<p>Please log in to comment</p>
+				{{/each}}
+			</div>
+		</div>
+	{{/with}}
+</template>

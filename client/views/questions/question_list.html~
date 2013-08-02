@@ -1,0 +1,11 @@
+<template name="newQuestions">
+  {{> questionList}}
+</template>
+<template name="questionList">
+  <div class="questions">
+  SHIT
+    {{#each question}}
+      {{> questionItem}}
+    {{/each}}
+  </div>
+</template>

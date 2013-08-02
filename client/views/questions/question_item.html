@@ -1,0 +1,12 @@
+<template name="questionItem">
+	<div class="question">
+		<a href="#" class="upvote btn {{upvotedClass}}">&uarr;</a>
+    <div class="question-content">
+      <h3><a href="{{questionPagePath this}}">{{title}}</a><span>{{author}}</span></h3>
+      <p>
+        {{#if ownQuestion}}<a href="{{questionEditPath this}}">Edit</a>{{/if}}
+      </p>
+    </div>
+    <a href="{{questionPagePath this}}" class="discuss btn">Check Answers</a>
+  </div>
+</template>

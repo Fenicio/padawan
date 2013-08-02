@@ -1,0 +1,9 @@
+{
+  "packages": {
+    "router": {},
+    "streams": {},
+    "accounts-ui-bootstrap-dropdown": {},
+    "errors": {},
+    "jquery-ui-bootstrap": {},
+  }
+}

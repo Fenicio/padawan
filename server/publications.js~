@@ -1,0 +1,23 @@
+Meteor.publish('questionsByTag', function(tags, limit) {
+  return Questions.find({},{ tags: {$in:tags}, limit: limit}9;
+});
+
+Meteor.publish('commentsByQuestion', function(qId) {
+  return Comments.find({}, {qId: qId});
+});
+
+Meteor.publish('commentsByAnswer', function(aId) {
+  return Anwsers.find({}, {aId: aId});
+});
+
+Meteor.publish('notifications', function() {
+  return Notifications.find({userId: this.userId});
+});
+
+Meteor.publish('newQuestions', function(limit) {
+  return Questions.find({}, {limit: limit});
+});
+
+Meteor.publish('singleQuestion', function(id) {
+  return id && Questions.find(id);
+});
