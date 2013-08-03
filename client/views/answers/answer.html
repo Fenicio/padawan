@@ -2,9 +2,23 @@
 	<div class="container">
 		{{body}}
 		<img src="{{picture}}">
-				<div class="q-footnote">
-					Asked by {{author}} on {{dateFormat submitted format="DD/MM/YYYY"}}
-					{{#if ownAnswer}}<a href="{{answerEditPath this}}">Edit</a>{{/if}}
-			</div>
+		<div class="q-footnote">
+			Asked by {{author}} on {{dateFormat submitted format="DD/MM/YYYY"}}
+			{{#if ownAnswer}}<a href="{{answerEditPath this}}">Edit answer</a>{{/if}}
+		</div>
+	</div>
+	<div class="commentsWrap">
+		<ul class="comments">
+		{{#each comments}}
+			{{> comment}}
+		{{/each}}
+		</ul>
+		<div class="insertComment">
+			{{#if currentUser}}
+				{{> commentSubmit _id}}
+			{{else}}
+				<p>Please log in to comment</p>
+			{{/if}}
+		</div>
 	</div>
 </template>

@@ -21,3 +21,4 @@ Meteor.publish('singleQuestion', function(id) {
 Meteor.publish('answersByQuestion', function(id) {
 	return id && Answers.find({}, {questionId: id});
 });
+

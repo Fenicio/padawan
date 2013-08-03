@@ -17,9 +17,8 @@ Meteor.methods({
 			commentCount: 0
 		});
 
-		console.log(answer);
-
 		var answerId = Answers.insert(answer);
+		createWatcherNotification(answer);
 		return answerId;
 	}
 });

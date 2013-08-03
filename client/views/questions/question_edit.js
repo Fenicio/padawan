@@ -31,14 +31,14 @@ Template.questionEdit.events({
 		e.preventDefault();
 		pad.drawImage(Questions.findOne(Session.get('currentQuestion')).picture);
 	},
-	'submit form': function(e) {
+	'submit form': function(e, instance) {
 		e.preventDefault();
 
 		var questionId = Session.get('currentQuestion');
 
 		var questionProperties= {
 			title: $(e.target).find('[name=title]').val(),
-			body: $(e.target).find('[name=body]').val(),
+			body: instance.editor.exportFile(), //$(e.target).find('[name=body]').val(),
 			picture: pad.toDataURL() //TODO imagen
 		}
 

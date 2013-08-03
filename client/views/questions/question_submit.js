@@ -18,11 +18,11 @@ Template.questionSubmit.events({
 		e.preventDefault();
 		pad.wipe(true);
 	},
-	'submit form': function(e) {
+	'submit form': function(e, instance) {
 		e.preventDefault();
 		var question= {
 			title: $(e.target).find('[name=title]').val(),
-			body: $(e.target).find('[name=body]').val(),
+			body: instance.editor.exportFile(), //$(e.target).find('[name=body]').val(),
 			picture: pad.toDataURL() //TODO imagen
 		}
 

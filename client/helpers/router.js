@@ -25,6 +25,12 @@ Meteor.Router.add({
     and: function(id) {
       Session.set('currentAnswer', id);
     }
+  },
+  '/search/:_text': {
+    to: 'questionsBySearch',
+    and: function(searchText) {
+      Session.set("searchText", searchText);
+    }
   }
 });
 

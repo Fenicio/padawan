@@ -18,8 +18,12 @@
 
 <template name="notification">
   <li>
-    <a href="{{postPagePath postId}}">
-      <strong>{{commenterName}}</strong> commented on your post
+    <a href="{{questionPagePath qId}}">
+      {{#if answered}}
+        <strong>{{commenterName}}</strong> answered your question
+      {{else}}
+        <strong>{{commenterName}}</strong> commented your post
+      {{/if}}
     </a>
   </li>
 </template>

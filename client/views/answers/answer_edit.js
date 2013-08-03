@@ -35,14 +35,14 @@ Template.answerEdit.events({
 		e.preventDefault();
 		pad.drawImage(Questions.findOne(Session.get('currentQuestion')).picture);
 	},
-	'submit form': function(e) {
+	'submit form': function(e, instance) {
 		e.preventDefault();
 
 		var answerId = Session.get('currentAnswer');
 		var questionId = Session.get('currentQuestion');
 
 		var answerProperties= {
-			body: $(e.target).find('[name=body]').val(),
+			body: instance.editor.exportFile(), //$(e.target).find('[name=body]').val(),
 			picture: pad.toDataURL() //TODO imagen
 		}
 
