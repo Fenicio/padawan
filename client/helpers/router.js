@@ -1,8 +1,11 @@
 Meteor.Router.add({
   '/': 'newQuestions',
+  '/votes': 'questionsByVotes',
   '/tag/:_name': {
-    to: 'questionsbyTag',
+    as: 'questionsByTag',
+    to: 'questionsByTag',
     and: function(tagName) {
+      console.log("el nuevo tag es "+tagName);
       Session.set('currentTag',tagName);
     }
   },
@@ -27,6 +30,7 @@ Meteor.Router.add({
     }
   },
   '/search/:_text': {
+    as: 'questionsBySearch',
     to: 'questionsBySearch',
     and: function(searchText) {
       Session.set("searchText", searchText);

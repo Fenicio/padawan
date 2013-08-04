@@ -1,9 +1,11 @@
 <template name="answer">
 	<div class="container">
-		{{body}}
+		<div class="a-body">
+			{{body}}
+		</div>
 		<img src="{{picture}}">
 		<div class="q-footnote">
-			Asked by {{author}} on {{dateFormat submitted format="DD/MM/YYYY"}}
+			Answered by {{author}} on {{dateFormat submitted format="DD/MM/YYYY"}}
 			{{#if ownAnswer}}<a href="{{answerEditPath this}}">Edit answer</a>{{/if}}
 		</div>
 	</div>
@@ -15,7 +17,9 @@
 		</ul>
 		<div class="insertComment">
 			{{#if currentUser}}
-				{{> commentSubmit _id}}
+				{{#isolate}}
+					{{> commentSubmit _id}}
+				{{/isolate}}
 			{{else}}
 				<p>Please log in to comment</p>
 			{{/if}}

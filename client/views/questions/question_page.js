@@ -10,7 +10,7 @@ Template.questionPage.helpers({
 		return Answers.find({questionId: this._id});
 	},
 	comments: function() {
-		return Comments.find({qId: this._id});
+		return Comments.find({qId: this._id, aId: {$exists: false}});
 	},
 	ownQuestion: function() {
 		return this.userId === Meteor.userId();

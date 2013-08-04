@@ -1,6 +1,19 @@
 <template name="newQuestions">
   {{> questionList options}}
 </template>
+
+<template name="questionsBySearch">
+	{{> questionList options}}
+</template>
+
+<template name="questionsByVotes">
+	{{> questionList options}}
+</template>
+
+<template name="questionsByTag">
+	{{> questionList options}}
+</template>
+
 <template name="questionList">
   <div class="questions">
     {{#each questions}}

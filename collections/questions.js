@@ -34,10 +34,10 @@ Meteor.methods({
     question = Questions.findOne(questionId);
     Questions.update({
       _id: question._id,
-      upvoters: {$ne: user._id}
+      voters: {$ne: user._id}
       }, {
-      $addToSet: {upvoters: user._id},
-      $inc: {votes:1}
+      $addToSet: {voters: user._id},
+      $inc: {questionScore:1}
     });
   },
   watchQuestion: function(questionId) {
@@ -65,6 +65,17 @@ Meteor.methods({
       }, {
       $pull: {watchers: user._id},
     });
+  },
+  addTag: function(tag, qId) {
+    var user = Meteor.user();
+    if(!user)
+      throw new Meteor.Error(401, "You need to be logged in to tag a Question");
+    if(!tag)
+      throw new Meteor.Error(422, "A tag cannot be empty");
+    Questions.update(qId, {$addToSet: {tags: tag}});
+  },
+  removeTag: function(tag, qId) {
+    Questions.update(qId, {$pull: {tags: tag}});
   }
 });
 

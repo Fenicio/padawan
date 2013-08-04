@@ -1,5 +1,5 @@
 Template.commentSubmit.rendered = function() {
-	self=this;
+	this.answerId=this.data;
 	if(!this.editor && $('#comment-editor')) {
 		var options = _.clone(EpicEditorOptions);
 		options.container='comment-editor';
@@ -18,7 +18,7 @@ Template.commentSubmit.events({
 		var comment = {
 			body: instance.editor.exportFile(),
 			qId: Session.get('currentQuestion'),
-			aId: Session.get('currentAnswer')
+			aId: instance.answerId
 		};
 
 		Meteor.call('comment', comment, function(error, commentId) {
@@ -26,9 +26,9 @@ Template.commentSubmit.events({
 				Meteor.Errors.throw(error.reason);
 			} else {
 				instance.editor.importFile();
-				$(instance.find('#comment-form')).hide();
-				$(instance.find('#comment-toggle')).show();
 			}
+			$(instance.find('#comment-form')).hide();
+			$(instance.find('#comment-toggle')).show();
 		});
 	},
 	'click #comment-toggle': function(e, instance) {

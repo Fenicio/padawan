@@ -121,3 +121,54 @@ background: rgba(0,0,0,0.1);
 .content {
 	background-color: '#ffe';
 }
+
+.answers {
+  margin: 0px;
+}
+.comment-body {
+  font-size: 13px;
+  color: '#222';
+}
+
+.comment-author {
+  font-size: 11px;
+  color: '#333';
+}
+
+.comment {
+  padding-left: 5%;
+}
+.container {
+  padding-top: 13px;
+  border-bottom: solid 2px '#eee';
+}
+.questionScore {
+  display: block;
+  margin: 7px 12px 0 0;
+  float: left;
+  font-size:22px;
+  color: '#ff0';
+}
+.item-tags {
+  display:block;
+  overflow: auto;
+  float: right;
+  margin-right: 8px;
+  margin-top: 8px;
+}
+#add-tag-form {
+  margin-bottom: 0px;
+}
+#edittag-input {
+  padding-bottom: 0px
+}
+.tag-remove {
+  float: right;
+}
+.tag-name {
+  float: left;
+  color: '#000';
+  font-size: 13px;
+  padding: 1px;
+  margin-right: 3px;
+}

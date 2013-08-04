@@ -1,7 +1,10 @@
 Notifications = new Meteor.Collection('notifications');
 
 Notifications.allow({
-  update: ownsDocument
+  update: ownsDocument,
+  insert: function() {
+  	return true;
+  }
 });
 
 /*
@@ -21,7 +24,7 @@ createCommentNotification = function(comment) {
 			var answer = Answers.findOne(comment.aId);
 			notification.userId=answer.userId;
 		}
-		Notifications.insert();
+		Notifications.insert(notification);
 	}
 }
 /*

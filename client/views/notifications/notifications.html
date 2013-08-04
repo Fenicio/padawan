@@ -1,13 +1,13 @@
 <template name="notifications">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
     Notifications
-    {{#if nootificationCount}}
-      <span class="badge badge-inverse">{{notificationCount}}</span>
+    {{#if notificationsCount}}
+      <span class="badge badge-inverse">{{notificationsCount}}</span>
     {{/if}}
     <b class="caret"></b>
   </a>
   <ul class="notification dropdown-menu">
-    {{#if notificationCount}}
+    {{#if notificationsCount}}
       {{#each notifications}}
         {{> notification}}
       {{/each}}
@@ -20,9 +20,9 @@
   <li>
     <a href="{{questionPagePath qId}}">
       {{#if answered}}
-        <strong>{{commenterName}}</strong> answered your question
+        <strong>{{commenteName}}</strong> answered your question
       {{else}}
-        <strong>{{commenterName}}</strong> commented your post
+        <strong>{{commenteName}}</strong> commented your post
       {{/if}}
     </a>
   </li>
