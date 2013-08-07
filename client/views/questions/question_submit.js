@@ -18,6 +18,14 @@ Template.questionSubmit.events({
 		e.preventDefault();
 		pad.wipe(true);
 	},
+	'click #canvas-undo': function(e) {
+		e.preventDefault();
+		pad.undo();
+	},
+	'click #canvas-redo': function(e) {
+		e.preventDefault();
+		pad.redo();
+	},
 	'submit form': function(e, instance) {
 		e.preventDefault();
 		var question= {

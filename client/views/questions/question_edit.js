@@ -29,7 +29,16 @@ Template.questionEdit.events({
 	},
 	'click #reset-canvas' : function(e) {
 		e.preventDefault();
+		pad.wipe(true);
 		pad.drawImage(Questions.findOne(Session.get('currentQuestion')).picture);
+	},
+	'click #canvas-redo': function(e) {
+		e.preventDefault();
+		pad.redo();
+	},
+	'click #canvas-undo': function(e) {
+		e.preventDefault();
+		pad.undo();
 	},
 	'submit form': function(e, instance) {
 		e.preventDefault();

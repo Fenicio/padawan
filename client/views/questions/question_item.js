@@ -13,7 +13,7 @@ Template.questionItem.helpers({
   downvotedClass: function() {
   var userId = Meteor.userId();
     if(userId && !_.include(this.voters, userId)) {
-      return "btn-danger upvotable";
+      return "btn-danger downvotable";
     } else {
       return "disabled";
     }
@@ -44,7 +44,7 @@ Template.questionItem.events({
   },
   'click .downvotable': function(e) {
     e.preventDefault();
-    Meteor.call('upvoteQuestion', this._id);
+    Meteor.call('downvoteQuestion', this._id);
   },
   'click .watchable': function(e) {
     e.preventDefault();
@@ -63,8 +63,6 @@ Template.questionItem.events({
   'click .remove': function (evt) {
     var tag = this.tag;
     var id = this.qId;
-    console.log(this);
-    console.log(tag+"-"+id);
     evt.target.parentNode.style.opacity = 0;
     // wait for CSS animation to finish
     Meteor.setTimeout(function () {

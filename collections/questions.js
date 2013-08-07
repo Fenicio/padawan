@@ -40,6 +40,20 @@ Meteor.methods({
       $inc: {questionScore:1}
     });
   },
+  downvoteQuestion: function(questionId) {
+    var user = Meteor.user();
+    
+    if(!user)
+      throw new Meteor.error(401, "You need to be logged in to vote");
+    question = Questions.findOne(questionId);
+    Questions.update({
+      _id: question._id,
+      voters: {$ne: user._id}
+      }, {
+      $addToSet: {voters: user._id},
+      $inc: {questionScore:-1}
+    });
+  },
   watchQuestion: function(questionId) {
     var user = Meteor.user();
     
@@ -73,9 +87,18 @@ Meteor.methods({
     if(!tag)
       throw new Meteor.Error(422, "A tag cannot be empty");
     Questions.update(qId, {$addToSet: {tags: tag}});
+    if(Tags.find({tagName: tag}).count()===0)
+      Tags.insert({ tagName: tag });
+    Tags.update({tagName: tag}, { $inc: {taggedItems: 1}} );
   },
   removeTag: function(tag, qId) {
+    var user = Meteor.user();
+    if(!user)
+      throw new Meteor.Error(401, "You need to be logged in to tag a Question");
+    if(!Questions.findOne(qId).userId===user._id)
+      throw new Meteor.Error(422, "You can't remove this tag");
     Questions.update(qId, {$pull: {tags: tag}});
+    Tags.update({tagName: tag}, { $inc: {taggedItems: -1}});
   }
 });
 

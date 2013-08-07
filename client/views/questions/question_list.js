@@ -45,7 +45,6 @@ Template.questionsByVotes.helpers({
 
 Template.questionList.helpers({
 	questions: function() {
-		console.log(this._where);
 		return Questions.find(this._where, {sort: this.sort, limit: this.handle._limit });
 	},
 	questionsReady: function() {

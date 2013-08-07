@@ -12,12 +12,20 @@
     </div>
     <a href="{{questionPagePath this}}" class="discuss btn">Check Answers</a>
     <div class="item-tags">
-      {{#each tags}}
-        <div class="tag removable_tag label label-info">
-          <div class="name tag-name">{{tag}}</div>
-          <div class="remove tag-remove"><i class="icon-remove-sign icon-white"></i></div>
-        </div>
-      {{/each}}
+      {{#if ownQuestion}}
+        {{#each tags}}
+          <div class="tag removable_tag label label-info">
+            <div class="name tag-name">{{tag}}</div>
+            <div class="remove tag-remove"><i class="icon-remove-sign icon-white"></i></div>
+          </div>
+        {{/each}}
+      {{else}}
+        {{#each tags}}
+          <div class="tag removable_tag label label-info">
+            <div class="name tag-name">{{tag}}</div>
+          </div>
+        {{/each}}
+      {{/if}}
       {{#if adding_tag}}
         <div class="tag edittag">
           <form id="add-tag-form">

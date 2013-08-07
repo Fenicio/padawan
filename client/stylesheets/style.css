@@ -1,4 +1,4 @@
-.grid-block, .main, .question, .q-body, .container, .comments li, .comment-form {
+.grid-block, .main, .question, .q-body, .container, .comment-form {
   background: #fff;
   border-radius: 3px;
   padding: 10px;
@@ -96,7 +96,7 @@ white-space: nowrap;
 }
 .load-more {
 display:block;
-order-radius: 3px;
+border-radius: 3px;
 background: rgba(0,0,0,0.05);
 text-align: center;
 height: 60px;
@@ -136,11 +136,17 @@ background: rgba(0,0,0,0.1);
 }
 
 .comment {
-  padding-left: 5%;
+  background: #fff;
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .container {
   padding-top: 13px;
-  border-bottom: solid 2px '#eee';
+  border-bottom: 2px solid #eee;
 }
 .questionScore {
   display: block;
@@ -171,4 +177,9 @@ background: rgba(0,0,0,0.1);
   font-size: 13px;
   padding: 1px;
   margin-right: 3px;
+}
+
+.answer-form {
+  margin-top: 5%;
+  border-top: 1px solid #eee;
 }

@@ -1,0 +1,20 @@
+<template name="tagsDropdown">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		Questions by Tag
+		<b class="caret"></b>
+	</a>
+	<ul class="tags dropdown-menu">
+		{{#each tags}}
+			{{> tagDropdown}}
+		{{/each}}
+	</ul>
+</template>
+
+<template name="tagDropdown">
+	<li>
+		<a href="{{questionsByTagPath tagName}}">
+			<strong>{{tagName}}</strong>
+			<span class="badge badge-inverse">{{taggedItems}}</span>
+		</a>
+	</li>
+</template>

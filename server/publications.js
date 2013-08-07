@@ -35,9 +35,7 @@ Meteor.publish('notifications', function() {
   return Notifications.find({userId: this.userId});
 });
 
-
-
-
-
-
-
+//Tags
+Meteor.publish('tags', function() {
+	return Tags.find();
+});

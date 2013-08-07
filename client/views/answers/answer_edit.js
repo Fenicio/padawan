@@ -35,6 +35,14 @@ Template.answerEdit.events({
 		e.preventDefault();
 		pad.drawImage(Questions.findOne(Session.get('currentQuestion')).picture);
 	},
+	'click #canvas-undo': function(e) {
+		e.preventDefault();
+		pad.undo();
+	},
+	'click #canvas-redo': function(e) {
+		e.preventDefault();
+		pad.redo();
+	},
 	'submit form': function(e, instance) {
 		e.preventDefault();
 

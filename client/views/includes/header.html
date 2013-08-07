@@ -9,10 +9,13 @@
 
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li><a href="{{newQuestionsPath}}">Order by date</a></li>
-          <li><a href="{{questionsByVotesPath}}">Order by votes</a></li>
+          <li class="{{activeRouteClass 'newQuestions'}}"><a href="{{newQuestionsPath}}">Order by date</a></li>
+          <li class="{{activeRouteClass 'questionsByVotes'}}"><a href="{{questionsByVotesPath}}">Order by votes</a></li>
+          <li class="dropdown">
+            {{> tagsDropdown}}
+          </li>
           {{#if currentUser}}
-          <li><a href="{{questionSubmitPath}}">New Question</a></li>
+            <li class="{{activeRouteClass 'questionSubmit'}}"><a href="{{questionSubmitPath}}">New Question</a></li>
           {{/if}}
         </ul>
         <ul class="nav pull-right">

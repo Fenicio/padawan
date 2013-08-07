@@ -4,6 +4,7 @@
     "streams": {},
     "accounts-ui-bootstrap-dropdown": {},
     "errors": {},
-    "jquery-ui-bootstrap": {}
+    "jquery-ui-bootstrap": {},
+    "spin": {}
   }
 }

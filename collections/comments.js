@@ -14,6 +14,9 @@ Meteor.methods({
 			submitted: new Date().getTime()
 		});
 		var commentId = Comments.insert(comment);
+		console.log("**Comentario**");
+		console.log(comment);
+		console.log(commentId);
 		createCommentNotification(comment);
 		return commentId;
 	}
