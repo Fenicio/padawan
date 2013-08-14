@@ -6,3 +6,6 @@
 preserve-inputs
 bootstrap
 accounts-password
+accounts-twitter
+accounts-facebook
+accounts-google
