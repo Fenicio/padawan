@@ -5,7 +5,6 @@ Meteor.Router.add({
     as: 'questionsByTag',
     to: 'questionsByTag',
     and: function(tagName) {
-      console.log("el nuevo tag es "+tagName);
       Session.set('currentTag',tagName);
     }
   },

@@ -9,3 +9,11 @@ accounts-password
 accounts-twitter
 accounts-facebook
 accounts-google
+standard-app-packages
+errors
+jquery-ui
+jquery-ui-bootstrap
+page-js-ie-support
+router
+spin
+streams

@@ -2,6 +2,9 @@ Template.questionItem.helpers({
 	'ownQuestion': function() {
 		return this.userId === Meteor.userId();
 	},
+  'userIsAdmin': function() {
+    return Meteor.user() && Meteor.user().username==="Guiom";
+  },
   upvotedClass: function() {
   var userId = Meteor.userId();
     if(userId && !_.include(this.voters, userId)) {
@@ -91,6 +94,10 @@ Template.questionItem.events({
   },
   'click .tag-name': function(evt, tmpl) {
     Meteor.Router.to('questionsByTag', this.tag);
+  },
+  'click #hide': function(evt, tmpl) {
+    evt.preventDefault();
+    Meteor.call('hideQuestion', this._id);
   }
 });
 

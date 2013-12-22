@@ -99,6 +99,12 @@ Meteor.methods({
       throw new Meteor.Error(422, "You can't remove this tag");
     Questions.update(qId, {$pull: {tags: tag}});
     Tags.update({tagName: tag}, { $inc: {taggedItems: -1}});
+  },
+  hideQuestion: function(questionId) {
+    var user= Meteor.user();
+    if(user.username!=="Guiom") 
+      throw new Meteor.Error(422, "You can't hide this question");
+    Questions.update(questionId, {'hidden': true});
   }
 });
 

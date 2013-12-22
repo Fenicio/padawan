@@ -8,6 +8,7 @@
       <h3><a href="{{questionPagePath this}}">{{title}}</a><span>{{author}}</span></h3>
       <p>
         {{#if ownQuestion}}<a href="{{questionEditPath this}}">Edit</a>{{/if}}
+        {{#if userIsAdmin}}<a href="#" id="hide">Hide</a> {{/if}}
       </p>  
     </div>
     <a href="{{questionPagePath this}}" class="discuss btn">Check Answers</a>
@@ -26,6 +27,7 @@
           </div>
         {{/each}}
       {{/if}}
+
       {{#if adding_tag}}
         <div class="tag edittag">
           <form id="add-tag-form">
