@@ -3,7 +3,6 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-preserve-inputs
 bootstrap
 accounts-password
 accounts-twitter
@@ -14,6 +13,8 @@ errors
 jquery-ui
 jquery-ui-bootstrap
 page-js-ie-support
-router
 spin
 streams
+iron-router
+accounts-base
+accounts-ui

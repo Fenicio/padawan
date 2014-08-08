@@ -35,12 +35,13 @@ Template.questionSubmit.events({
 		}
 
 		Meteor.call('question', question, function(error, id) {
+      console.log(error);
       if(error) {
-        Meteor.Errors.throw(error.reason);
+        throwError(error.reason);
         if(error.error === 30)
-          Meteor.Router.to('questionPage', error.details);
+          Router.go('questionPage', {_id: error.details});
       } else {
-        Meteor.Router.to('questionPage', id);
+        Router.go('questionPage', {_id: id});
       }
     });
 	}

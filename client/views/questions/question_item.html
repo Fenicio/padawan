@@ -5,13 +5,13 @@
     <a href="#" class="upvote btn {{downvotedClass}}"><i class="icon-arrow-down icon-white"></i></a>
     <a href="#" class="watchbtn btn {{watchedClass}}"><i class="icon-eye-open icon-white"></i></a>
     <div class="question-content">
-      <h3><a href="{{questionPagePath this}}">{{title}}</a><span>{{author}}</span></h3>
+      <h3><a href="{{pathFor 'questionPage' this}}">{{title}}</a><span>{{author}}</span></h3>
       <p>
-        {{#if ownQuestion}}<a href="{{questionEditPath this}}">Edit</a>{{/if}}
+        {{#if ownQuestion}}<a href="{{pathFor 'questionEdit' this}}">Edit</a>{{/if}}
         {{#if userIsAdmin}}<a href="#" id="hide">Hide</a> {{/if}}
       </p>  
     </div>
-    <a href="{{questionPagePath this}}" class="discuss btn">Check Answers</a>
+    <a href="{{pathFor 'questionPage' this}}" class="discuss btn">Check Answers</a>
     <div class="item-tags">
       {{#if ownQuestion}}
         {{#each tags}}

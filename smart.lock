@@ -7,13 +7,14 @@
       "accounts-ui-bootstrap-dropdown": {},
       "errors": {},
       "jquery-ui-bootstrap": {},
-      "spin": {}
+      "spin": {},
+      "iron-router": {}
     },
     "packages": {
       "router": {
         "git": "https://github.com/tmeasday/meteor-router.git",
-        "tag": "v0.5.4.1",
-        "commit": "d00e380dda2184b70e909fc4a0fb5358d602c586"
+        "tag": "v0.6.1",
+        "commit": "8ec75fec7affdefc787d19f23b36fd6d1d44ef04"
       },
       "streams": {
         "git": "https://github.com/arunoda/meteor-streams.git",
@@ -22,13 +23,13 @@
       },
       "accounts-ui-bootstrap-dropdown": {
         "git": "https://github.com/erobit/meteor-accounts-ui-bootstrap-dropdown.git",
-        "tag": "v0.6.5.1",
-        "commit": "c8b29d2e7f8611d6dec9d6d23c1c2b94e000b0fb"
+        "tag": "v0.8.3",
+        "commit": "a7af8a52e4e74db020a69b158a8f992797b8b0b0"
       },
       "errors": {
         "git": "https://github.com/tmeasday/meteor-errors.git",
-        "tag": "v0.2.0",
-        "commit": "b7cc525c19defe2dc744e8e34d1328b430f3e03a"
+        "tag": "v0.2.1",
+        "commit": "f2af03510a9e3d9952601f5f091aa76bfbcbf224"
       },
       "jquery-ui-bootstrap": {
         "git": "https://github.com/TimHeckel/meteor-jquery-ui-bootstrap.git",
@@ -37,8 +38,13 @@
       },
       "spin": {
         "git": "https://github.com/SachaG/meteor-spin.git",
-        "tag": "v0.2.0",
-        "commit": "fd3a2871a69442848b4b4e74f5e1ae28fa4a95a4"
+        "tag": "v2.0.4",
+        "commit": "f7b1e12a7caff1283cdb3671a393c182d0ae9862"
+      },
+      "iron-router": {
+        "git": "https://github.com/EventedMind/iron-router.git",
+        "tag": "v0.8.2",
+        "commit": "05415a8891ea87a00fb1e2388585f2ca5a38e0da"
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",
@@ -47,13 +53,33 @@
       },
       "HTML5-History-API": {
         "git": "https://github.com/tmeasday/meteor-HTML5-History-API.git",
-        "tag": "v4.0.0",
-        "commit": "dc4965f1424cfca625ec3fbea17eace03f8e32c5"
+        "tag": "v4.1.2",
+        "commit": "b5fca79f9ae8936e5f748a04f475295f4fa1cc7a"
       },
       "jquery-ui": {
         "git": "https://github.com/TimHeckel/meteor-jquery-ui.git",
         "tag": "v1.9.2",
         "commit": "c437d45edcf1367df8d5ffa8bad2867758030bd2"
+      },
+      "iron-layout": {
+        "git": "https://github.com/EventedMind/iron-layout.git",
+        "tag": "v0.2.0",
+        "commit": "4a2d53e35ba036b0c189c7ceca34be494d4c6c97"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.2.5",
+        "commit": "273e3ab7d005d91a1a59c71bd224533b4dae2fbd"
+      },
+      "iron-core": {
+        "git": "https://github.com/EventedMind/iron-core.git",
+        "tag": "v0.2.0",
+        "commit": "0e48b5dc50d03f01025b7b900fb5ce2f13d52cad"
+      },
+      "iron-dynamic-template": {
+        "git": "https://github.com/EventedMind/iron-dynamic-template.git",
+        "tag": "v0.2.1",
+        "commit": "4dd1185c4d9d616c9abdb3f33e4a7d5a88db7e18"
       }
     }
   }

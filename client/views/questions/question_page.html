@@ -1,10 +1,9 @@
 <template name="questionPage">
-	{{#with currentQuestion}}
 		<div class="title"><h2>{{title}}</h2></div>
 		<div class="q-body">{{body}}</div>
 		<div class="q-footnote">
 			<h7>Asked by {{author}} on {{dateFormat submitted format="DD/MM/YYYY"}}</h7>
-			{{#if ownQuestion}}<a href="{{questionEditPath this}}">Edit question</a>{{/if}}
+			{{#if ownQuestion}}<a href="{{pathFor 'questionEdit' this}}">Edit question</a>{{/if}}
 		</div>
 		<img src="{{picture}}">
 		<div class="commentsWrap">
@@ -13,7 +12,6 @@
 				{{> comment}}
 			{{/each}}
 			</ul>
-			{{#isolate}}
 			<div class="insertComment">
 				{{#if currentUser}}
 					{{> commentSubmit _id}}
@@ -21,7 +19,6 @@
 					<p>Please log in to comment</p>
 				{{/if}}
 			</div>
-			{{/isolate}}
 		</div>
 		<ul class="answers">
 			{{#each answers}}
@@ -29,12 +26,9 @@
 			{{/each}}
 		</ul>
 		{{#if currentUser}}
-			{{#isolate}}
-				{{> answerSubmit}}
-			{{/isolate}}
+			{{> answerSubmit}}
 		{{else}}
 			<p>Please log in to answer.</p>
 		{{/if}}
 		
-	{{/with}}
 </template>

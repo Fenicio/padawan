@@ -6,9 +6,12 @@
 		<img src="{{picture}}">
 		<div class="q-footnote">
 			Answered by {{author}} on {{dateFormat submitted format="DD/MM/YYYY"}}
-			{{#if ownAnswer}}<a href="{{answerEditPath this}}">Edit answer</a>{{/if}}
+			{{#if ownAnswer}}<a href="{{pathFor 'answerEdit' this}}">Edit answer</a>{{/if}}
 		</div>
 	</div>
+	<button name="marker" class="marker">
+		<span>{{ commentLength }}</span>
+	</button>
 	<div class="commentsWrap">
 		<ul class="comments">
 		{{#each comments}}

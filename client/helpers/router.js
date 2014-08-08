@@ -1,56 +1,71 @@
-Meteor.Router.add({
-  '/': 'newQuestions',
-  '/votes': 'questionsByVotes',
-  '/tag/:_name': {
-    as: 'questionsByTag',
-    to: 'questionsByTag',
-    and: function(tagName) {
-      Session.set('currentTag',tagName);
+Router.configure({
+  layoutTemplate: 'layout',
+  loadingTemplate: 'loading',
+  waitOn: function() {
+    return [Meteor.subscribe('notifications')];
+  }
+});
+
+Router.map(function() {
+  this.route('newQuestions', {path: '/'});
+  this.route('questionsByVotes', {path: '/votes'});
+  this.route('questionsByTag', {
+    path: '/tag/:_name',
+    data: function(tagName) {
+      return Tags.findOne({name: this.params._name});
     }
-  },
-  '/questionSubmit' : 'questionSubmit',
-  '/question/:_id' : {
-    to: 'questionPage',
-    and: function(id) {
+  });
+  this.route('questionSubmit', {
+    path: '/questionSubmit', 
+    progress: {enabled: false}
+  });
+  this.route('questionPage', {
+    path: '/question/:_id', 
+    waitOn: function() {
+      return [
+        Meteor.subscribe('singleQuestion', this.params._id),
+        Meteor.subscribe('answersByQuestion', this.params._id)
+      ];
+    },
+    data: function() {
+      return Questions.findOne(this.params._id);
+    }
+  });
+  this.route('questionEdit', {
+    path: '/question/:_id/edit', 
+    action: function(id) {
       Session.set('currentQuestion', id);
     }
-  },
-  '/question/:_id/edit': {
-    to: 'questionEdit',
-    and: function(id) {
-      Session.set('currentQuestion', id);
+  });
+  this.route('answerEdit', 
+    {
+      path: '/answer/:_id/edit',  
+      action: function(id) {
+        Session.set('currentAnswer', id);
     }
-  },
-  '/answer/:_id/edit': {
-    as: 'answerEdit',
-    to: 'answerEdit',
-    and: function(id) {
-      Session.set('currentAnswer', id);
-    }
-  },
-  '/search/:_text': {
-    as: 'questionsBySearch',
-    to: 'questionsBySearch',
-    and: function(searchText) {
+  });
+  this.route('questionsBySearch', {
+    path: '/search/:_text', 
+    action: function(searchText) {
       Session.set("searchText", searchText);
     }
-  }
+  });
 });
 
-Meteor.Router.filters({
-  'requireLogin': function(page) {
-    if(Meteor.user())
-      return page;
-    else if (Meteor.loggingIn())
-      return 'loading';
-    else
-      return 'accessDenied';
-  },
-  'clearErrors': function(page) {
-    Meteor.Errors.clear();
+var requireLogin = function(page) {
+  if(Meteor.user())
     return page;
-  }
-});
+  else if (Meteor.loggingIn())
+    return this.loadingTemplate;
+  else
+    return 'accessDenied';
+};
 
-Meteor.Router.filter('requireLogin', {only: 'postSubmit' });
-Meteor.Router.filter('clearErrors');
+var clearErrors = function(page) {
+  Errors.remove({seen: true});
+  return page;
+};
+
+Router.onBeforeAction(requireLogin ,{only: [ 'postSubmit' ]});
+Router.onBeforeAction(clearErrors);
+Router.onBeforeAction('loading');

@@ -11,6 +11,6 @@ Template.notification.events({
   'click a': function(e) {
   	e.preventDefault();
     Notifications.update(this._id, {$set: {read: true}});
-    Meteor.Router.to('/question/'+this.questionId);
+    Router.go('/question/'+this.questionId);
   }
 });

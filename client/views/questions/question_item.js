@@ -82,7 +82,7 @@ Template.questionItem.events({
     var id = this._id;
     Meteor.call('addTag', tag, id, function(error, id) {
       if(error) {
-        Meteor.Errors.throw(error.reason);
+        throwError(error.reason);
       } else {
         Session.set('editing_addtag', null);
       }
@@ -93,7 +93,7 @@ Template.questionItem.events({
     Session.set('editing_addtag', null);
   },
   'click .tag-name': function(evt, tmpl) {
-    Meteor.Router.to('questionsByTag', this.tag);
+    Router.go('questionsByTag', this.tag);
   },
   'click #hide': function(evt, tmpl) {
     evt.preventDefault();

@@ -55,9 +55,9 @@ Template.questionEdit.events({
       if(error) {
         Meteor.Errors.throw(error.reason);
         if(error.error === 30)
-          Meteor.Router.to('questionPage', error.details);
+          Router.go('questionPage', error.details);
       } else {
-        Meteor.Router.to('questionPage', questionId);
+        Router.go('questionPage', questionId);
       }
     });
 	}

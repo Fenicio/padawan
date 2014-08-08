@@ -5,6 +5,7 @@
     "accounts-ui-bootstrap-dropdown": {},
     "errors": {},
     "jquery-ui-bootstrap": {},
-    "spin": {}
+    "spin": {},
+    "iron-router": {}
   }
 }

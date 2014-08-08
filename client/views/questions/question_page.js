@@ -4,6 +4,7 @@ Template.questionPage.rendered=function() {
 
 Template.questionPage.helpers({
 	currentQuestion: function() {
+		console.log(data);
 		return Questions.findOne(Session.get("currentQuestion"));
 	},
 	answers: function() {

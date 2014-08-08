@@ -4,5 +4,8 @@ Template.answer.helpers({
 	},
 	'comments': function() {
 		return Comments.find({aId: this._id});
-	}
+	},
+  'commentsLength' : function() {
+    return Comments.find({aId: this._id}).count();
+  }
 });

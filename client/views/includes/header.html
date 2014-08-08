@@ -2,20 +2,33 @@
   <header class="navbar">
     <div class="navbar-inner">
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>    
-      <a class="brand" href="{{newQuestionsPath}}">Padawan</a>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>    
+      </a>
+      <a class="brand" href="{{pathFor 'newQuestions'}}">Padawan</a>
 
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="{{activeRouteClass 'newQuestions'}}"><a href="{{newQuestionsPath}}">Order by date</a></li>
-          <li class="{{activeRouteClass 'questionsByVotes'}}"><a href="{{questionsByVotesPath}}">Order by votes</a></li>
+          <li class="{{activeRouteClass 'newQuestions'}}">
+            <a href="{{pathFor 'newQuestions'}}">
+              Order by date
+            </a>
+          </li>
+          <li class="{{activeRouteClass 'questionsByVotes'}}">
+            <a href="{{pathFor 'questionsByVotes'}}">
+              Order by votes
+            </a>
+          </li>
           <li class="dropdown">
             {{> tagsDropdown}}
           </li>
           {{#if currentUser}}
-            <li class="{{activeRouteClass 'questionSubmit'}}"><a href="{{questionSubmitPath}}">New Question</a></li>
+            <li class="{{activeRouteClass 'questionSubmit'}}">
+              <a href="{{pathFor 'questionSubmit'}}">
+                New Question
+              </a>
+            </li>
           {{/if}}
         </ul>
         <ul class="nav pull-right">
@@ -29,7 +42,7 @@
             {{> notifications}}
           </li>
           {{/if}}
-          <li>{{loginButtons}}</li>
+          <li>{{> loginButtons}}</li>
         </ul>
       </div>
     </div>

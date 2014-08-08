@@ -14,11 +14,12 @@
     {{else}}
       <li><span>No notifications</span></li>
     {{/if}}
+  </ul>
 </template>
 
 <template name="notification">
   <li>
-    <a href="{{questionPagePath qId}}">
+    <a href="{{pathFor 'questionPage' qId}}">
       {{#if answered}}
         <strong>{{commenteName}}</strong> answered your question
       {{else}}

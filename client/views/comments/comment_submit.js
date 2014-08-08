@@ -1,19 +1,12 @@
 Template.commentSubmit.rendered = function() {
 	this.answerId=this.data;
-	if(!this.editor && $('#comment-editor')) {
-		var options = _.clone(EpicEditorOptions);
-		options.container='comment-editor';
-		options.container+=this.data;
-		$('#comment-editor').attr('id', options.container);
-		this.editor = new EpicEditor(options).load();
-	}
 	if(this.find('#comment-form')) {
 		$(this.find('#comment-form')).hide();
 	}
 };
 
 Template.commentSubmit.events({
-	'submit form': function(e, instance) {
+	'click [name="post"]': function(e, instance) {
 		e.preventDefault();
 		var comment = {
 			body: instance.editor.exportFile(),

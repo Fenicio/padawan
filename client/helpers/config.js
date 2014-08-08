@@ -1,8 +1,3 @@
-Accounts.ui.config({
-  passwordSignupFields: 'USERNAME_ONLY'
-});
-
-
 EpicEditorOptions={
 	container: 'editor',
 	basePath: '/editor',
