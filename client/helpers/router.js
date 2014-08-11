@@ -29,25 +29,28 @@ Router.map(function() {
     },
     data: function() {
       return Questions.findOne(this.params._id);
+    }, 
+    onBeforeAction: function() {
+      Session.set('currentQuestion', this.params._id);
     }
   });
   this.route('questionEdit', {
     path: '/question/:_id/edit', 
-    action: function(id) {
-      Session.set('currentQuestion', id);
+    onBeforeAction: function(id) {
+      Session.set('currentQuestion', this.params._id);
     }
   });
   this.route('answerEdit', 
     {
       path: '/answer/:_id/edit',  
-      action: function(id) {
-        Session.set('currentAnswer', id);
+      onBeforeAction: function(id) {
+        Session.set('currentAnswer', this.params._id);
     }
   });
   this.route('questionsBySearch', {
     path: '/search/:_text', 
-    action: function(searchText) {
-      Session.set("searchText", searchText);
+    onBeforeAction: function(searchText) {
+      Session.set("searchText", this.params._text);
     }
   });
 });
