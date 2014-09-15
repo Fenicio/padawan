@@ -1,7 +1,6 @@
 Answers = new Meteor.Collection('answers');
 
-Meteor.methods({
-	'answer': function(answerAttributes) {
+Template.answer.answer = function(answerAttributes) {
 		var user=Meteor.user();
 		if(!user)
 			throw new Meteor.Error(401, "You must be logged in to answer a question");
@@ -20,8 +19,7 @@ Meteor.methods({
 		var answerId = Answers.insert(answer);
 		createWatcherNotification(answer);
 		return answerId;
-	}
-});
+	};
 
 Answers.allow({
 	insert: function(userId, doc) {
