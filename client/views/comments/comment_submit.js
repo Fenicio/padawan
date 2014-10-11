@@ -8,8 +8,10 @@ Template.commentSubmit.rendered = function() {
 Template.commentSubmit.events({
 	'click [name="post"]': function(e, instance) {
 		e.preventDefault();
+		console.log(instance, instance.find('[name="comment-body"]'));
+
 		var comment = {
-			body: instance.editor.exportFile(),
+			body: instance.find('[name="comment-body"]').value, //No es un campo de texto, es un campo de epiceditor
 			qId: Session.get('currentQuestion'),
 			aId: instance.answerId
 		};
@@ -18,7 +20,7 @@ Template.commentSubmit.events({
 			if(error) {
 				Meteor.Errors.throw(error.reason);
 			} else {
-				instance.editor.importFile();
+				//instance.editor.importFile();
 			}
 			$(instance.find('#comment-form')).hide();
 			$(instance.find('#comment-toggle')).show();

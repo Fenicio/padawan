@@ -1,15 +1,16 @@
  <template name="header">
-  <header class="navbar">
-    <div class="navbar-inner">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>    
-      </a>
-      <a class="brand" href="{{pathFor 'newQuestions'}}">Padawan</a>
-
-      <div class="nav-collapse collapse">
-        <ul class="nav">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>    
+        </button>
+        <a class="navbar-brand" href="{{pathFor 'newQuestions'}}">Padawan</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
           <li class="{{activeRouteClass 'newQuestions'}}">
             <a href="{{pathFor 'newQuestions'}}">
               Order by date
@@ -31,7 +32,7 @@
             </li>
           {{/if}}
         </ul>
-        <ul class="nav pull-right">
+        <ul class="nav navbar-nav navbar-right">
           <li>
             <form class="navbar-search">
               <input type="text" class="search-query" id="search-text" placeholder="Search" value="{{searchValue}}">
@@ -46,5 +47,5 @@
         </ul>
       </div>
     </div>
-   </header>
+   </nav>
  </template>
