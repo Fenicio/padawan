@@ -11,10 +11,10 @@ Template.answer.helpers({
 });
 
 Template.answer.events({
-  'click [name="marker"]': function(e,instance) {
+  'click [name="answerMarker"]': function(e,instance) {
     console.log(e,instance);
     e.preventDefault();
-    $(instance.find('.commentsWrap')).toggleClass('hidden');
+    $(instance.find('[name="answerComments"]')).toggleClass('hidden');
     $(instance.find('[name="answer"]')).toggleClass('col-sm-8');
     $(instance.find('[name="answer"]')).toggleClass('col-sm-12');
   }

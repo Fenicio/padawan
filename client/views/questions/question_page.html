@@ -1,30 +1,40 @@
 <template name="questionPage">
-		<div class="title"><h2>{{title}}</h2></div>
-		<div class="q-body">{{body}}</div>
-		<div class="q-footnote">
-			<h7>Asked by {{author}} on {{dateFormat submitted format="DD/MM/YYYY"}}</h7>
-			{{#if ownQuestion}}<a href="{{pathFor 'questionEdit' this}}">Edit question</a>{{/if}}
-		</div>
-		<img src="{{picture}}">
-		<div class="commentsWrap">
-			<ul class="comments">
-			{{#each comments}}
-				{{> comment}}
-			{{/each}}
-			</ul>
-			<div class="insertComment">
-				{{#if currentUser}}
-					{{> commentSubmit _id}}
-				{{else}}
-					<p>Please log in to comment</p>
-				{{/if}}
+		<div class="page-header"><h2>{{title}}</h2></div>
+		<div class="row">
+			<div name="question" class="col-sm-12 col-xs-12 animated">
+				<button name="questionMarker" class="btn btn-link pull-right">
+					{{ commentsLength }}<span class="glyphicon glyphicon-comment"></span>
+				</button>
+				<div class="q-body">{{body}}</div>
+				<div class="q-footnote">
+					<h7>Asked by <a href="{{pathFor 'user' userId}}">{{author}}</a> on {{dateFormat submitted format="DD/MM/YYYY"}}</h7>
+					{{#if ownQuestion}}<a href="{{pathFor 'questionEdit' this}}">Edit question</a>{{/if}}
+				</div>
+				<img src="{{picture}}">
+			</div>
+			<div name="questionComments" class="commentsWrap hidden col-sm-4 col-xs-12 animated">
+				<ul class="comments">
+				{{#each comments}}
+					{{> comment}}
+				{{/each}}
+				</ul>
+				<div class="insertComment">
+					{{#if currentUser}}
+						{{> commentSubmit _id}}
+					{{else}}
+						<p>Please log in to comment</p>
+					{{/if}}
+				</div>
 			</div>
 		</div>
-		<ul class="answers">
+		<div class="page-header">
+			<h3>Answers</h3>
+		</div>
+		<div class="answers list-group">
 			{{#each answers}}
 				{{> answer}}
 			{{/each}}
-		</ul>
+		</div>
 		{{#if currentUser}}
 			{{> answerSubmit}}
 		{{else}}

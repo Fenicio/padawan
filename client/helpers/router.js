@@ -32,41 +32,49 @@ Router.map(function() {
     }, 
     onBeforeAction: function() {
       Session.set('currentQuestion', this.params._id);
+      this.next();
     }
   });
   this.route('questionEdit', {
     path: '/question/:_id/edit', 
-    onBeforeAction: function(id) {
+    onBeforeAction: function() {
       Session.set('currentQuestion', this.params._id);
+      this.next();
     }
   });
   this.route('answerEdit', 
     {
       path: '/answer/:_id/edit',  
-      onBeforeAction: function(id) {
+      onBeforeAction: function() {
         Session.set('currentAnswer', this.params._id);
+        this.next();
     }
   });
   this.route('questionsBySearch', {
     path: '/search/:_text', 
-    onBeforeAction: function(searchText) {
+    onBeforeAction: function() {
       Session.set("searchText", this.params._text);
+      this.next();
+    }
+  });
+  this.route('user',{
+    path: '/user/:_id',
+    data: function() {
+      return Meteor.users.findOne(this.params._id)
     }
   });
 });
 
-var requireLogin = function(page) {
+var requireLogin = function() {
   if(Meteor.user())
-    return page;
-  else if (Meteor.loggingIn())
-    return this.loadingTemplate;
+    this.next();
   else
-    return 'accessDenied';
+    this.render('accessDenied');
 };
 
 var clearErrors = function(page) {
   Errors.remove({seen: true});
-  return page;
+  this.next();
 };
 
 Router.onBeforeAction(requireLogin ,{only: [ 'postSubmit' ]});

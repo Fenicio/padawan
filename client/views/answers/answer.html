@@ -1,6 +1,10 @@
 <template name="answer">
+	<div class="list-group-item">
 	<div class="row">
-		<div name="answer" class="col-sm-12 col-xs-12">
+		<div name="answer" class="col-sm-12 col-xs-12 animated">
+			<button name="answerMarker" class="btn btn-link pull-right">
+					{{ commentsLength }}<span class="glyphicon glyphicon-comment"></span>
+				</button>
 			<div class="a-body">
 				{{body}}
 			</div>
@@ -8,12 +12,9 @@
 			<div class="q-footnote">
 				Answered by {{author}} on {{dateFormat submitted format="DD/MM/YYYY"}}
 				{{#if ownAnswer}}<a href="{{pathFor 'answerEdit' this}}">Edit answer</a>{{/if}}
-				<button name="marker" class="btn btn-link pull-right">
-					{{ commentLength }}<span class="glyphicon glyphicon-comment"></span>
-				</button>
 			</div>
 		</div>
-		<div class="commentsWrap hidden col-sm-4 col-xs-12">
+		<div name="answerComments" class="commentsWrap hidden col-sm-4 col-xs-12 animated">
 			<ul class="comments">
 			{{#each comments}}
 				{{> comment}}
@@ -28,4 +29,5 @@
 			</div>
 		</div>
 	</div>
+</div>
 </template>

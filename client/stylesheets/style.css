@@ -9,10 +9,6 @@ body {
   background: #eee;
   color: #666666;
 }
-.navbar { margin-bottom: 10px; }
-.navbar .navbar-inner {
-  border-radius: 0px 0px 3px 3px;
-}
 
 #spinner {
   height: 300px;
@@ -182,4 +178,11 @@ background: rgba(0,0,0,0.1);
 .answer-form {
   margin-top: 5%;
   border-top: 1px solid #eee;
+}
+
+.animated {
+  -webkit-transition: width 0.3s ease, margin 0.3s ease;
+  -moz-transition: width 0.3s ease, margin 0.3s ease;
+  -o-transition: width 0.3s ease, margin 0.3s ease;
+  transition: width 0.3s ease, margin 0.3s ease;
 }

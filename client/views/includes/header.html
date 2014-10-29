@@ -2,14 +2,14 @@
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
-        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target=".nav-collapse">
+        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>    
         </button>
         <a class="navbar-brand" href="{{pathFor 'newQuestions'}}">Padawan</a>
       </div>
-      <div class="navbar-collapse collapse">
+      <div class="navbar-collapse collapse" id="collapsable-nav">
         <ul class="nav navbar-nav">
           <li class="{{activeRouteClass 'newQuestions'}}">
             <a href="{{pathFor 'newQuestions'}}">
