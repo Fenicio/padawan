@@ -19,4 +19,6 @@ accounts-base
 accounts-ui
 iron:router
 mizzao:bootstrap-3
+mike:mocha
+tap:i18n
 

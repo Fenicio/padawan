@@ -13,12 +13,12 @@
         <ul class="nav navbar-nav">
           <li class="{{activeRouteClass 'newQuestions'}}">
             <a href="{{pathFor 'newQuestions'}}">
-              Order by date
+              {{_ "order_by_date"}}
             </a>
           </li>
           <li class="{{activeRouteClass 'questionsByVotes'}}">
             <a href="{{pathFor 'questionsByVotes'}}">
-              Order by votes
+              {{_ "order_by_votes"}}
             </a>
           </li>
           <li class="dropdown">
@@ -35,7 +35,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li>
             <form class="navbar-search">
-              <input type="text" class="search-query" id="search-text" placeholder="Search" value="{{searchValue}}">
+              <input type="text" class="search-query" id="search-text" placeholder="{{_ "search"}}" value="{{searchValue}}">
             </form>
           </li>
           {{#if currentUser}}
