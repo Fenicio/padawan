@@ -2,5 +2,15 @@
   "order_by_date": "Order By Date",
   "order_by_votes": "Order By Votes",
   "questions_by_tag": "Questions By Tag",
-  "search": "Search"
+  "search": "Search",
+  "title": "Title",
+  "body": "Body",
+  "board": "Board",
+  "undo": "Undo",
+  "wipe": "Wipe",
+  "redo": "Redo",
+  "reset": "Reset",
+  "submit": "Submit",
+  "edit_answer": "Edit Answer",
+  "login_comment": "Please log in to comment"
 }

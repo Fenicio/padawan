@@ -2,13 +2,13 @@
 	{{#with question}}
 	<form class="main">
 		<div class="control-group">
-			<label class="control-label" for="title">Title</label>
+			<label class="control-label" for="title">{{_ "title"}}</label>
 			<div class="controls">
 				<input name="title" type="text" value="{{title}}" placeholder="Question title"/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label" for="body">Body</label>
+			<label class="control-label" for="body">{{_ "body"}}</label>
 			<div class="controls" id="editor">
 				<textarea name="body" type="text" placeholder="Question body">
 					{{body}}
@@ -16,12 +16,12 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label" for="body">Board</label>
+			<label class="control-label" for="body">{{_ "board"}}</label>
 			<div class="controls">
-				<a class="btn btn-primary" id="canvas-undo"><i class="icon-backward icon-white"></i>Undo</a>
-				<a id="wipe-canvas" class="btn btn-primary"><i class="icon-eject icon-white"></i>Wipe</a>
-				<a class="btn btn-primary" id="canvas-redo"><i class="icon-forward icon-white"></i>Redo</a>
-				<a id="reset-canvas" class="btn btn-primary"><i class="icon-repeat icon-white"></i>Reset</a>
+				<a class="btn btn-primary" id="canvas-undo"><i class="icon-backward icon-white"></i>{{_ "undo"}}</a>
+				<a id="wipe-canvas" class="btn btn-primary"><i class="icon-eject icon-white"></i>{{_ "wipe"}}</a>
+				<a class="btn btn-primary" id="canvas-redo"><i class="icon-forward icon-white"></i>{{_ "redo"}}</a>
+				<a id="reset-canvas" class="btn btn-primary"><i class="icon-repeat icon-white"></i>{{_ "reset"}}</a>
 				<div class="canvas-wrap">
 					<canvas id="q-canvas">
 					</canvas>
@@ -30,7 +30,7 @@
 		</div>
 		<div class="control-group">
 			<div class="controls">
-				<input type="submit" value="Submit" id="submit-question" class="btn btn-primary">
+				<input type="submit" value="{{_ "submit"}}" id="submit-question" class="btn btn-primary">
 			</div>
 		</div>
 	</form>

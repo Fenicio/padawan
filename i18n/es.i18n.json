@@ -2,5 +2,15 @@
   "order_by_date": "Ordenar Por Fecha",
   "order_by_votes": "Ordenar Por Votos",
   "questions_by_tag": "Preguntas por Etiqueta",
-  "search": "Buscar"
+  "search": "Buscar",
+  "title": "Titulo",
+  "body": "Cuerpo",
+  "board": "Pizarra",
+  "undo": "Deshacer",
+  "wipe": "Limpiar",
+  "redo": "Rehacer",
+  "reset": "Reiniciar",
+  "submit": "Enviar",
+  "edit_answer": "Editar Respuesta",
+  "login_comment": "Por favor, conectese para comentar"
 }
