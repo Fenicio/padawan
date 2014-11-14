@@ -10,7 +10,7 @@
 			</div>
 			<img src="{{picture}}">
 			<div class="q-footnote">
-				Answered by {{author}} on {{dateFormat submitted format="DD/MM/YYYY"}}
+				{{_ "answered_by"}}{{author}}{{_ "on"}}{{dateFormat submitted format="DD/MM/YYYY"}}
 				{{#if ownAnswer}}<a href="{{pathFor 'answerEdit' this}}">{{_ "edit_answer"}}</a>{{/if}}
 			</div>
 		</div>

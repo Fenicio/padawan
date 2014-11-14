@@ -12,5 +12,18 @@
   "reset": "Reiniciar",
   "submit": "Enviar",
   "edit_answer": "Editar Respuesta",
-  "login_comment": "Por favor, conectese para comentar"
+  "login_comment": "Por favor, conectese para comentar",
+  "edit_question": "Editar Pregunta",
+  "on": " a ",
+  "asked_by": "Preguntado por ",
+  "answers": "Respuestas",
+  "login_answer": "Por favor, conecte para responder",
+  "edit": "Editar",
+  "hide": "Esconder",
+  "check_answers": "Ver Respuestas",
+  "add": "Añadir",
+  "cancel": "Cancelar",
+  "title": "Padawan - Un sitio reactivo para estudiantes reactivos",
+  "answered_by": "Resuelto por ",
+  "summary": "Resumen"
 }

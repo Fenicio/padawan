@@ -12,5 +12,18 @@
   "reset": "Reset",
   "submit": "Submit",
   "edit_answer": "Edit Answer",
-  "login_comment": "Please log in to comment"
+  "login_comment": "Please log in to comment",
+  "edit_question": "Edit Question",
+  "on": " on ",
+  "asked_by": "Asked by ",
+  "answers": "Answers",
+  "login_answer": "Please log in to answer.",
+  "edit": "Edit",
+  "hide": "Hide",
+  "check_answers": "Check Answers",
+  "add": "Add",
+  "cancel": "Cancel",
+  "title": "Padawan - A reactive site for reactive students",
+  "answered_by": "Answered by ",
+  "summary": "Summary"
 }

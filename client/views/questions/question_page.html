@@ -7,8 +7,8 @@
 				</button>
 				<div class="q-body">{{body}}</div>
 				<div class="q-footnote">
-					<h7>Asked by <a href="{{pathFor 'user' userId}}">{{author}}</a> on {{dateFormat submitted format="DD/MM/YYYY"}}</h7>
-					{{#if ownQuestion}}<a href="{{pathFor 'questionEdit' this}}">Edit question</a>{{/if}}
+					<h7>{{_ "asked_by"}}<a href="{{pathFor 'user' userId}}">{{author}}</a> {{_ "on"}}{{dateFormat submitted format="DD/MM/YYYY"}}</h7>
+					{{#if ownQuestion}}<a href="{{pathFor 'questionEdit' this}}">{{_ "edit_question"}}</a>{{/if}}
 				</div>
 				<img src="{{picture}}">
 			</div>
@@ -22,13 +22,13 @@
 					{{#if currentUser}}
 						{{> commentSubmit _id}}
 					{{else}}
-						<p>Please log in to comment</p>
+						<p>{{_ "login_comment"}}</p>
 					{{/if}}
 				</div>
 			</div>
 		</div>
 		<div class="page-header">
-			<h3>Answers</h3>
+			<h3>{{_ "answers"}}</h3>
 		</div>
 		<div class="answers list-group">
 			{{#each answers}}
@@ -38,7 +38,7 @@
 		{{#if currentUser}}
 			{{> answerSubmit}}
 		{{else}}
-			<p>Please log in to answer.</p>
+			<p>{{_ "login_answer"}}</p>
 		{{/if}}
 		
 </template>

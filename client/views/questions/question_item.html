@@ -7,11 +7,11 @@
     <div class="question-content">
       <h3><a href="{{pathFor 'questionPage' this}}">{{title}}</a><span>{{author}}</span></h3>
       <p>
-        {{#if ownQuestion}}<a href="{{pathFor 'questionEdit' this}}">Edit</a>{{/if}}
-        {{#if userIsAdmin}}<a href="#" id="hide">Hide</a> {{/if}}
+        {{#if ownQuestion}}<a href="{{pathFor 'questionEdit' this}}">{{_ "edit"}}</a>{{/if}}
+        {{#if userIsAdmin}}<a href="#" id="hide">{{_ "hide"}}</a> {{/if}}
       </p>  
     </div>
-    <a href="{{pathFor 'questionPage' this}}" class="discuss btn">Check Answers</a>
+    <a href="{{pathFor 'questionPage' this}}" class="discuss btn">{{_ "check_answers"}}</a>
     <div class="item-tags">
       {{#if ownQuestion}}
         {{#each tags}}
@@ -32,8 +32,8 @@
         <div class="tag edittag">
           <form id="add-tag-form">
             <input type="text" id="edittag-input" value="" />
-            <button id="add-tag-btn" class="btn btn-primary">Add</button>
-            <button id="cancel-tag-btn" class="btn btn-primary">Cancel</button>
+            <button id="add-tag-btn" class="btn btn-primary">{{_ "add"}}</button>
+            <button id="cancel-tag-btn" class="btn btn-primary">{{_ "cancel"}}</button>
           </form>
         </div>
       {{else}}
