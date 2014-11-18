@@ -25,5 +25,10 @@
   "cancel": "Cancel",
   "title": "Padawan - A reactive site for reactive students",
   "answered_by": "Answered by ",
-  "summary": "Summary"
+  "summary": "Summary",
+  "questions": "Questions",
+  "comments": "Comentarios",
+  "upvoted": "Upvoted",
+  "watching": "Watching",
+  "downvoted": "Downvoted"
 }
