@@ -1,17 +1,17 @@
 <template name="commentSubmit">
-	<div class="comment-intro">
+  <div class="comment-intro">
     <button id="comment-toggle" class="btn">
-      Insert a comment
+      {{_ "insert_comment"}}
     </button>
   </div>
-	<form id="comment-form">
-		<div id="comment-editor" class="editor">
-			<input type="text" class="comment-box" name="comment-body" placeholder="Inserta un comentario"/>
-		</div>
+  <form id="comment-form">
+    <div id="comment-editor" class="editor">
+      <input type="text" class="comment-box" name="comment-body" placeholder='{{_ "insert_comment"}}'/>
+    </div>
     <div class="comment-actions">
-		  <button class="comment-link" name="post">
-        Post
+      <button class="comment-link" name="post">
+        {{_ "post"}}
       </button>
     </div>
-	</form>
+  </form>
 </template>

@@ -1,6 +1,6 @@
 <template name="notifications">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-    Notifications
+    {{_ "notifications"}}
     {{#if notificationsCount}}
       <span class="badge badge-inverse">{{notificationsCount}}</span>
     {{/if}}
@@ -12,7 +12,7 @@
         {{> notification}}
       {{/each}}
     {{else}}
-      <li><span>No notifications</span></li>
+      <li><span>{{_ "no_notifications"}}</span></li>
     {{/if}}
   </ul>
 </template>
@@ -21,9 +21,9 @@
   <li>
     <a href="{{pathFor 'questionPage' qId}}">
       {{#if answered}}
-        <strong>{{commenteName}}</strong> answered your question
+        <strong>{{commenteName}}</strong> {{_ "answered_your_question"}}
       {{else}}
-        <strong>{{commenteName}}</strong> commented your post
+        <strong>{{commenteName}}</strong> {{_ "commented_your_post"}}
       {{/if}}
     </a>
   </li>
