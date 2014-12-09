@@ -30,20 +30,26 @@
                 {{_ "new_question"}}
               </a>
             </li>
+          {{ else }}
+            {{> loginButtons}}
           {{/if}}
         </ul>
+            <form class="navbar-form navbar-right navbar-search">
+              <div class="form-group">
+                <input type="text" class="search-query" id="search-text" placeholder="{{_ "search"}}" value="{{searchValue}}">
+              </div>
+            </form>
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <form class="navbar-search">
-              <input type="text" class="search-query" id="search-text" placeholder="{{_ "search"}}" value="{{searchValue}}">
-            </form>
+            <button id="to_esp" class="btn">ESP</button>
+            <button id="to_eng" class="btn">ENG</button>
           </li>
           {{#if currentUser}}
           <li class="dropdown">
             {{> notifications}}
           </li>
           {{/if}}
-          <li>{{> loginButtons}}</li>
+          
         </ul>
       </div>
     </div>

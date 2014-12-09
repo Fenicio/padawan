@@ -3,7 +3,17 @@ Template.header.events({
 		e.preventDefault();
 		var searchtext = instance.find('#search-text').value;
 		Router.go('questionsBySearch', searchtext);
-	}
+	},
+  'click #to_esp': function(e) {
+    TAPi18n.setLanguage("es");
+    accountsUIBootstrap3.setLanguage("es");
+    e.preventDefault();
+  },
+  'click #to_eng': function(e) {
+    TAPi18n.setLanguage("en");
+    accountsUIBootstrap3.setLanguage("en");
+    e.preventDefault();
+  }
 });
 
 Template.header.helpers({

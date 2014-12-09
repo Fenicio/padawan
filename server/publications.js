@@ -20,6 +20,16 @@ Meteor.publish('singleQuestion', function(id) {
   return id && Questions.find(id);
 });
 
+Meteor.publish('fiveQuestions', function(userId) {
+  return Questions.find({ userId: userId});
+});
+Meteor.publish('upvotedQuestions', function(userId) {
+  return Questions.find({ voters: {$in: [userId]} });
+});
+Meteor.publish('watchingQuestions', function(userId) {
+  return Questions.find({ watchers: { $in: [userId]}});
+});
+
 //Answers
 Meteor.publish('answersByQuestion', function(id) {
 	return id && Answers.find({}, {questionId: id});
@@ -38,4 +48,20 @@ Meteor.publish('notifications', function() {
 //Tags
 Meteor.publish('tags', function() {
 	return Tags.find();
+});
+
+//User
+Meteor.publish('singleUser', function(userId) {
+  console.log("Meteor.publish.singleUser", userId);
+  if(userId) {
+    var returnable = Meteor.users.find({_id: userId}, {fields: {
+          username: 1,
+          createdAt: 1
+        }
+      });
+    console.log("Meteor.publish.singleUser.return", returnable);
+    return returnable;
+  } else {
+    this.ready();
+  }
 });

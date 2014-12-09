@@ -12,7 +12,7 @@
 
 <template name="tagDropdown">
 	<li>
-		<a href="{{questionsByTagPath tagName}}">
+		<a href="{{pathFor 'questionsByTag' tagName}}">
 			<strong>{{tagName}}</strong>
 			<span class="badge badge-inverse">{{taggedItems}}</span>
 		</a>

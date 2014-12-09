@@ -2,7 +2,7 @@
   "packages": {
     "router": {},
     "streams": {},
-    "accounts-ui-bootstrap-dropdown": {},
+    "ian:meteor-accounts-ui-bootstrap3": {},
     "errors": {},
     "jquery-ui-bootstrap": {},
     "spin": {},

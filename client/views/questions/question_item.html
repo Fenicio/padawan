@@ -1,9 +1,9 @@
 <template name="questionItem">
 	<div class="question">
-		<a href="#" class="upvote btn {{upvotedClass}}"><i class="icon-arrow-up icon-white"></i></a>
+		<a href="#" class="upvote btn {{upvotedClass}}"><i class="glyphicon glyphicon-arrow-up icon-arrow-up icon-white"></i></a>
     <div class="questionScore">{{questionScore}}</div>
-    <a href="#" class="upvote btn {{downvotedClass}}"><i class="icon-arrow-down icon-white"></i></a>
-    <a href="#" class="watchbtn btn {{watchedClass}}"><i class="icon-eye-open icon-white"></i></a>
+    <a href="#" class="upvote btn {{downvotedClass}}"><i class="glyphicon glyphicon-arrow-down  icon-arrow-down icon-white"></i></a>
+    <a href="#" class="watchbtn btn {{watchedClass}}"><i class="glyphicon glyphicon-eye-open  icon-eye-open icon-white"></i></a>
     <div class="question-content">
       <h3><a href="{{pathFor 'questionPage' this}}">{{title}}</a><span>{{author}}</span></h3>
       <p>
@@ -17,7 +17,7 @@
         {{#each tags}}
           <div class="tag removable_tag label label-info">
             <div class="name tag-name">{{tag}}</div>
-            <div class="remove tag-remove"><i class="icon-remove-sign icon-white"></i></div>
+            <div class="remove tag-remove"><i class="glyphicon glyphicon-remove-sign  icon-remove-sign icon-white"></i></div>
           </div>
         {{/each}}
       {{else}}
