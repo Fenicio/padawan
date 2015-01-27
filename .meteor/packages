@@ -17,7 +17,6 @@ streams
 accounts-base
 iron:router
 mizzao:bootstrap-3
-mike:mocha
 tap:i18n
 ian:accounts-ui-bootstrap-3
 

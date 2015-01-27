@@ -58,23 +58,17 @@ Router.map(function() {
     }
   });
   this.route('user',{
-    path: '/user/:_id',
-    onBeforeAction: function() {
-      Session.set("userPageId", this.params._id);
-      this.next();
-    },
+    path: '/user/:username',
     waitOn: function() {
       return [
-        Meteor.subscribe('fiveQuestions', this.params._id),
-        Meteor.subscribe('upvotedQuestions', this.params._id),
-        Meteor.subscribe('watchingQuestions', this.params._id),
-        Meteor.subscribe('singleUser', this.params._id)
+        Meteor.subscribe('singleUser', this.params.username),
+        Meteor.subscribe('fiveQuestions', this.params.username)
       ];
     },
     data: function() {
-      console.log("prelodanig", this.userId, this.params._id)
-      console.log("lodanig", Meteor.users.findOne(this.params._id));
-      return Meteor.users.findOne(this.params._id);
+      return Meteor.users.findOne({
+        username: this.params.username
+      });
     }
   });
 });

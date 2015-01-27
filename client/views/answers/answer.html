@@ -1,33 +1,33 @@
 <template name="answer">
-	<div class="list-group-item">
-	<div class="row">
-		<div name="answer" class="col-sm-12 col-xs-12 animated">
-			<button name="answerMarker" class="btn btn-link pull-right">
-					{{ commentsLength }}<span class="glyphicon glyphicon-comment"></span>
-				</button>
-			<div class="a-body">
-				{{body}}
-			</div>
-			<img src="{{picture}}">
-			<div class="q-footnote">
-				{{_ "answered_by"}}{{author}}{{_ "on"}}{{dateFormat submitted format="DD/MM/YYYY"}}
-				{{#if ownAnswer}}<a href="{{pathFor 'answerEdit' this}}">{{_ "edit_answer"}}</a>{{/if}}
-			</div>
-		</div>
-		<div name="answerComments" class="commentsWrap hidden col-sm-4 col-xs-12 animated">
-			<ul class="comments">
-			{{#each comments}}
-				{{> comment}}
-			{{/each}}
-			</ul>
-			<div class="insertComment">
-				{{#if currentUser}}
-					{{> commentSubmit _id}}
-				{{else}}
-					<p>{{_ "login_comment"}}</p>
-				{{/if}}
-			</div>
-		</div>
-	</div>
+  <div class="list-group-item">
+  <div class="row">
+    <div name="answer" class="col-sm-12 col-xs-12 animated">
+      <button name="answerMarker" class="btn btn-link pull-right">
+          {{ commentsLength }}<span class="glyphicon glyphicon-comment"></span>
+        </button>
+      <div class="a-body">
+        {{body}}
+      </div>
+      <img src="{{picture}}">
+      <div class="q-footnote">
+        {{_ "answered_by"}}{{author}}{{_ "on"}}{{dateFormat submitted format="DD/MM/YYYY"}}
+        {{#if ownAnswer}}<a href="{{pathFor 'answerEdit' this}}">{{_ "edit_answer"}}</a>{{/if}}
+      </div>
+    </div>
+    <div name="answerComments" class="commentsWrap hidden col-sm-4 col-xs-12 animated">
+      <ul class="comments">
+      {{#each comments}}
+        {{> comment}}
+      {{/each}}
+      </ul>
+      <div class="insertComment">
+        {{#if currentUser}}
+          {{> commentSubmit _id}}
+        {{else}}
+          <p>{{_ "login_comment"}}</p>
+        {{/if}}
+      </div>
+    </div>
+  </div>
 </div>
 </template>

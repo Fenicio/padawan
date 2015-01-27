@@ -7,7 +7,7 @@
 				</button>
 				<div class="q-body">{{body}}</div>
 				<div class="q-footnote">
-					<h7>{{_ "asked_by"}}<a href="{{pathFor 'user' userId}}">{{author}}</a> {{_ "on"}}{{dateFormat submitted format="DD/MM/YYYY"}}</h7>
+					<h7>{{_ "asked_by"}}<a href="{{pathFor 'user' author}}">{{author}}</a> {{_ "on"}}{{dateFormat submitted format="DD/MM/YYYY"}}</h7>
 					{{#if ownQuestion}}<a href="{{pathFor 'questionEdit' this}}">{{_ "edit_question"}}</a>{{/if}}
 				</div>
 				<img src="{{picture}}">
