@@ -151,6 +151,7 @@ background: rgba(0,0,0,0.1);
   font-size:22px;
   color: '#ff0';
 }
+
 .item-tags {
   display:block;
   overflow: auto;

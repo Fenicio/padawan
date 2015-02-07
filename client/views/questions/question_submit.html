@@ -1,34 +1,34 @@
 <template name="questionSubmit">
-	<form class="main">
-		<div class="control-group">
-			<label class="control-label" for="title">{{_ "title"}}</label>
-			<div class="controls">
-				<input name="title" type="text" value="" class="form-control" placeholder="Question title"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="body">{{_ "body"}}</label>
-			<div class="controls" id="editor">
-				<textarea name="body" type="text" value="" placeholder="Question body">
-				</textarea>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="body">{{_ "board"}}</label>
-			<div class="controls">
-				<a class="btn btn-primary" id="canvas-undo"><i class="icon-backward icon-white"></i>{{_ "undo"}}</a>
-				<a id="wipe-canvas" class="btn btn-primary"><i class="icon-eject icon-white"></i>{{_ "wipe"}}</a>
-				<a class="btn btn-primary" id="canvas-redo"><i class="icon-forward icon-white"></i>{{_ "redo"}}</a>
-				<div class="canvas-wrap">
-					<canvas id="q-canvas">
-					</canvas>
-				</div>
-			</div>
-		</div>
-		<div class="control-group">
-			<div class="controls">
-				<input type="submit" value="{{_ "submit"}}" id="submit-question" class="btn btn-primary">
-			</div>
-		</div>
-	</form>
+  <form class="main">
+    <div class="control-group">
+      <label class="control-label" for="title">{{_ "title"}}</label>
+      <div class="controls">
+        <input name="title" type="text" value="" class="form-control" placeholder="Question title"/>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="body">{{_ "body"}}</label>
+      <div class="controls" id="editor">
+        <textarea name="body" type="text" value="" placeholder="Question body">
+        </textarea>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="body">{{_ "board"}}</label>
+      <div class="controls">
+        <a class="btn btn-primary" id="canvas-undo"><i class="glyphicon glyphicon-backward "></i>{{_ "undo"}}</a>
+        <a id="wipe-canvas" class="btn btn-primary"><i class="glyphicon glyphicon-eject"></i>{{_ "wipe"}}</a>
+        <a class="btn btn-primary" id="canvas-redo"><i class="gliphicon glyphicon-forward"></i>{{_ "redo"}}</a>
+        <div class="canvas-wrap">
+          <canvas id="q-canvas">
+          </canvas>
+        </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <input type="submit" value="{{_ "submit"}}" id="submit-question" class="btn btn-primary">
+      </div>
+    </div>
+  </form>
 </template>

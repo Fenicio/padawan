@@ -12,8 +12,6 @@
       <ul class="nav nav-tabs" role="tablist">
         <li class="active"><a href="#summary" role="tab" data-toggle="tab">{{_ "summary"}}</a></li>
         <li><a href="#questions" role="tab" data-toggle="tab">{{_ "questions"}}</a></li>
-        <li><a href="#upvoted" role="tab" data-toggle="tab">{{_ "upvoted"}}</a></li>
-        <li><a href="#watching" role="tab" data-toggle="tab">{{_ "watching"}}</a></li>
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="summary">
@@ -21,16 +19,6 @@
         </div>
         <div class="tab-pane" id="questions">
           {{#each fiveQuestions}}
-            {{> questionItem}}
-          {{/each}}
-        </div>
-        <div class="tab-pane" id="upvoted">
-          {{#each upvotedQuestions}}
-            {{> questionItem}}
-          {{/each}}
-        </div>
-        <div class="tab-pane" id="watching">
-          {{#each watchingQuestions}}
             {{> questionItem}}
           {{/each}}
         </div>

@@ -5,7 +5,7 @@
     <a href="#" class="upvote btn {{downvotedClass}}"><i class="glyphicon glyphicon-arrow-down  icon-arrow-down icon-white"></i></a>
     <a href="#" class="watchbtn btn {{watchedClass}}"><i class="glyphicon glyphicon-eye-open  icon-eye-open icon-white"></i></a>
     <div class="question-content">
-      <h3><a href="{{pathFor 'questionPage' this}}">{{title}}</a><span>{{author}}</span></h3>
+      <h3><a href="{{pathFor 'questionPage' this}}">{{title}}</a><span><a href="/user/{{author}}">{{author}}</a></span></h3>
       <p>
         {{#if ownQuestion}}<a href="{{pathFor 'questionEdit' this}}">{{_ "edit"}}</a>{{/if}}
         {{#if userIsAdmin}}<a href="#" id="hide">{{_ "hide"}}</a> {{/if}}
@@ -15,10 +15,10 @@
     <div class="item-tags">
       {{#if ownQuestion}}
         {{#each tags}}
-          <div class="tag removable_tag label label-info">
-            <div class="name tag-name">{{tag}}</div>
-            <div class="remove tag-remove"><i class="glyphicon glyphicon-remove"></i></div>
-          </div>
+          <span class="label label-info">
+            <span class="name">{{tag}}</span>
+            <span class="remove "><span class="glyphicon glyphicon-remove"></span></span>
+          </span>
         {{/each}}
       {{else}}
         {{#each tags}}

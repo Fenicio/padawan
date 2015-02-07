@@ -1,44 +1,44 @@
 <template name="questionPage">
-		<div class="page-header"><h2>{{title}}</h2></div>
-		<div class="row">
-			<div name="question" class="col-sm-12 col-xs-12 animated">
-				<button name="questionMarker" class="btn btn-link pull-right">
-					{{ commentsLength }}<span class="glyphicon glyphicon-comment"></span>
-				</button>
-				<div class="q-body">{{body}}</div>
-				<div class="q-footnote">
-					<h7>{{_ "asked_by"}}<a href="{{pathFor 'user' author}}">{{author}}</a> {{_ "on"}}{{dateFormat submitted format="DD/MM/YYYY"}}</h7>
-					{{#if ownQuestion}}<a href="{{pathFor 'questionEdit' this}}">{{_ "edit_question"}}</a>{{/if}}
-				</div>
-				<img src="{{picture}}">
-			</div>
-			<div name="questionComments" class="commentsWrap hidden col-sm-4 col-xs-12 animated">
-				<ul class="comments">
-				{{#each comments}}
-					{{> comment}}
-				{{/each}}
-				</ul>
-				<div class="insertComment">
-					{{#if currentUser}}
-						{{> commentSubmit _id}}
-					{{else}}
-						<p>{{_ "login_comment"}}</p>
-					{{/if}}
-				</div>
-			</div>
-		</div>
-		<div class="page-header">
-			<h3>{{_ "answers"}}</h3>
-		</div>
-		<div class="answers list-group">
-			{{#each answers}}
-				{{> answer}}
-			{{/each}}
-		</div>
-		{{#if currentUser}}
-			{{> answerSubmit}}
-		{{else}}
-			<p>{{_ "login_answer"}}</p>
-		{{/if}}
-		
+    <div class="page-header"><h2>{{title}}</h2></div>
+    <div class="row">
+      <div name="question" class="col-sm-12 col-xs-12 animated">
+        <button name="questionMarker" class="btn btn-link pull-right">
+          {{ commentsLength }}<span class="glyphicon glyphicon-comment"></span>
+        </button>
+        <div class="q-body">{{body}}</div>
+        <div class="q-footnote">
+          <h7>{{_ "asked_by"}}<a href="/user/{{author}}">{{author}}</a> {{_ "on"}}{{dateFormat submitted format="DD/MM/YYYY"}}</h7>
+          {{#if ownQuestion}}<a href="{{pathFor 'questionEdit' this}}">{{_ "edit_question"}}</a>{{/if}}
+        </div>
+        <img src="{{picture}}">
+      </div>
+      <div name="questionComments" class="commentsWrap hidden col-sm-4 col-xs-12 animated">
+        <ul class="comments">
+        {{#each comments}}
+          {{> comment}}
+        {{/each}}
+        </ul>
+        <div class="insertComment">
+          {{#if currentUser}}
+            {{> commentSubmit _id}}
+          {{else}}
+            <p>{{_ "login_comment"}}</p>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    <div class="page-header">
+      <h3>{{_ "answers"}}</h3>
+    </div>
+    <div class="answers list-group">
+      {{#each answers}}
+        {{> answer}}
+      {{/each}}
+    </div>
+    {{#if currentUser}}
+      {{> answerSubmit}}
+    {{else}}
+      <p>{{_ "login_answer"}}</p>
+    {{/if}}
+    
 </template>

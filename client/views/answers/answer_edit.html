@@ -1,28 +1,28 @@
 <template name="answerEdit">
-	<form name="answer" class="answer-form">
-		<div class="control-group">
-			<label for="body">{{_ "answer_body"}}</label>
-			<div class="controls" id="editor">
-				<textarea id="text-body" name="body">{{body}}</textarea>
-			</div>
-		</div>
-		<div class="control-group">
-			<div class="controls">
-				<a class="btn btn-primary" id="canvas-undo"><i class="glyphicon glyphicon-backward icon-white"></i>{{_ "undo"}}</a>
-				<a id="wipe-answer" class="btn btn-primary"><i class="icon-eject icon-white"></i>{{_ "wipe"}}</a>
-				<a class="btn btn-primary" id="canvas-redo"><i class="icon-forward icon-white"></i>{{_ "redo"}}</a>
-				<a id="reset-canvas" class="btn btn-primary"><i class="icon-share icon-white"></i>{{_ "reset"}}</a>
-				<a id="load-question" class="btn btn-primary"><i class="icon-repeat icon-white"></i> {{_ "load_canvas"}}</a>
-				<div class="canvas-wrap">
-					<canvas id="a-canvas">
-					</canvas>
-				</div>
-			</div>
-		</div>
-		<div class="control-group">
-			<div class="controls">
-				<button type="submit" class="btn">{{_ "update_answer"}}</button>
-			</div>
-		</div>
-	</form>
+  <form name="answer" class="answer-form">
+    <div class="control-group">
+      <label for="body">{{_ "answer_body"}}</label>
+      <div class="controls" id="editor">
+        <textarea id="text-body" name="body">{{body}}</textarea>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <a class="btn btn-primary" id="canvas-undo"><i class="glyphicon glyphicon-backward icon-white"></i>{{_ "undo"}}</a>
+        <a id="wipe-answer" class="btn btn-primary"><i class="glyphicon glyphicon-eject"></i>{{_ "wipe"}}</a>
+        <a class="btn btn-primary" id="canvas-redo"><i class="gliphicon glyphicon-forward"></i>{{_ "redo"}}</a>
+        <a id="reset-canvas" class="btn btn-primary"><i class="gliphicon glyphicon-repeat"></i>{{_ "reset"}}</a>
+        <a id="load-question" class="btn btn-primary"><i class="gliphicon glyphicon-refresh"></i> {{_ "load_canvas"}}</a>
+        <div class="canvas-wrap">
+          <canvas id="a-canvas">
+          </canvas>
+        </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" class="btn">{{_ "update_answer"}}</button>
+      </div>
+    </div>
+  </form>
 </template>
