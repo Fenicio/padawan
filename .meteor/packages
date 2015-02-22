@@ -20,3 +20,7 @@ mizzao:bootstrap-3
 tap:i18n
 ian:accounts-ui-bootstrap-3
 
+mike:mocha
+sanjo:jasmine
+velocity:html-reporter
+velocity:nightwatch-framework
