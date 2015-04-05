@@ -42,5 +42,6 @@
   "notifications": "Notifications",
   "no_notifications": "No Notifications",
   "answered_your_question": "answered your question",
-  "commented_your_post": "commented your post"
+  "commented_your_post": "commented your post",
+  "has_been_registered": "has been registered since"
 }
