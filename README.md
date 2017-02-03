@@ -1,5 +1,8 @@
-//TODO questionsByTagPath
-//TODO revisar Tags
-/*
-Creo que la razon por la que no me estan funcionando las userPages es porque no estoy guardando bien los _id de usuario, fijate que de userA para varias preguntas hay varias ids distintas.
-*/
+Padawan
+=======
+
+This project is what made to end my degree.
+
+It works as a stack overflow clone with a canvas for drawing.
+
+It's development stopped the moment i got my degree, but it's been left here for archeological purposes
